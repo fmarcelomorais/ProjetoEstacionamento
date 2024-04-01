@@ -83,10 +83,10 @@ namespace MyPark.Models
             {
                 if (Funcionalidades.vagas[i] != null && Funcionalidades.vagas[i].Carro.Placa == carro.Placa)
                 {
-                    Funcionalidades.vagas[i].HoraSaida = DateTime.Now.AddMinutes(30);
+                    Funcionalidades.vagas[i].HoraSaida = DateTime.Now;
                     TimeSpan tempoDecorrido = Funcionalidades.vagas[i].HoraSaida - Funcionalidades.vagas[i].HoraEntrada; 
                     var tipoCarro = Funcionalidades.vagas[i].Carro.Tipo.ToLower() == "p" ? VALOR_CARRO_PEQUENO : VALOR_CARRO_GRANDE;
-                    Funcionalidades.vagas[i].ValorAPagar = tempoDecorrido.Minutes * tipoCarro / 60;
+                    Funcionalidades.vagas[i].ValorAPagar = tempoDecorrido.Minutes * tipoCarro / 60 < 5.00 ? VALOR_CARRO_PEQUENO : tempoDecorrido.Minutes * tipoCarro / 60;
                 }             
                 
             }
