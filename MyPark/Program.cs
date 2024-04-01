@@ -2,7 +2,9 @@
 using MyPark.Models;
 using MyPark;
 
-System.Console.WriteLine("===============[syspark v1.0]===============");
+System.Console.WriteLine("===============[ Syspark v1.0 ]===============\n");
 
 Funcionalidades.Menu();
+
+System.Console.WriteLine("\n===============[ Desenvolvido por Marcelo Morais ]===============");
 
