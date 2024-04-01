@@ -1,0 +1,14 @@
+F:\projetoEstacionamento\MyPark\bin\Debug\net8.0\MyPark.exe
+F:\projetoEstacionamento\MyPark\bin\Debug\net8.0\MyPark.deps.json
+F:\projetoEstacionamento\MyPark\bin\Debug\net8.0\MyPark.runtimeconfig.json
+F:\projetoEstacionamento\MyPark\bin\Debug\net8.0\MyPark.dll
+F:\projetoEstacionamento\MyPark\bin\Debug\net8.0\MyPark.pdb
+F:\projetoEstacionamento\MyPark\obj\Debug\net8.0\MyPark.GeneratedMSBuildEditorConfig.editorconfig
+F:\projetoEstacionamento\MyPark\obj\Debug\net8.0\MyPark.AssemblyInfoInputs.cache
+F:\projetoEstacionamento\MyPark\obj\Debug\net8.0\MyPark.AssemblyInfo.cs
+F:\projetoEstacionamento\MyPark\obj\Debug\net8.0\MyPark.csproj.CoreCompileInputs.cache
+F:\projetoEstacionamento\MyPark\obj\Debug\net8.0\MyPark.dll
+F:\projetoEstacionamento\MyPark\obj\Debug\net8.0\refint\MyPark.dll
+F:\projetoEstacionamento\MyPark\obj\Debug\net8.0\MyPark.pdb
+F:\projetoEstacionamento\MyPark\obj\Debug\net8.0\MyPark.genruntimeconfig.cache
+F:\projetoEstacionamento\MyPark\obj\Debug\net8.0\ref\MyPark.dll
