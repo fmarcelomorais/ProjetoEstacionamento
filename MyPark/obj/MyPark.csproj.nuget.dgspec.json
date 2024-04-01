@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "F:\\Projetoestacionamento\\mypark\\MyPark.csproj": {}
+    "F:\\projetoEstacionamento\\mypark\\MyPark.csproj": {}
   },
   "projects": {
-    "F:\\Projetoestacionamento\\mypark\\MyPark.csproj": {
+    "F:\\projetoEstacionamento\\mypark\\MyPark.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\Projetoestacionamento\\mypark\\MyPark.csproj",
+        "projectUniqueName": "F:\\projetoEstacionamento\\mypark\\MyPark.csproj",
         "projectName": "MyPark",
-        "projectPath": "F:\\Projetoestacionamento\\mypark\\MyPark.csproj",
+        "projectPath": "F:\\projetoEstacionamento\\mypark\\MyPark.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "F:\\Projetoestacionamento\\mypark\\obj\\",
+        "outputPath": "F:\\projetoEstacionamento\\mypark\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
