@@ -3,21 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using MyPark.Models;
+using Newtonsoft.Json;
 
 namespace MyPark
 {
     public class Financeiro
     {
-        List<Garage> pagamentos = new List<Garage>();
-        public double Valor { get; set; }
-
+        Pagamentos Pag = new Pagamentos();
+        
         public bool Receber(string placa, double valor)
         {  
             
             var es = new Estacionamento();
             var carro = es.BuscaVeiculo(placa);
             var pago = false;
-            var pg = new Pagamentos();
             
              for(int i = 0; i < Funcionalidades.vagas.Length; i++)
             {
@@ -25,10 +24,12 @@ namespace MyPark
                 {
                     var pagou = RealizaPagamento(Funcionalidades.vagas[i].ValorAPagar, valor);
                     Funcionalidades.vagas[i].StatusPagamento = pagou;
+                    //Funcionalidades.vagas[i].ValorAPagar = valor;
+                    Pag.GravarPagamento(Funcionalidades.vagas[i], valor);
+                    Funcionalidades.listaDePagamentos.Add(Pag);
+                    string pagamentosJson = JsonConvert.SerializeObject(Funcionalidades.listaDePagamentos, Formatting.Indented);
+                    File.WriteAllText("Arquivos/pagamentos.json", pagamentosJson);
                     Funcionalidades.vagas[i] = null;
-                    pagamentos.Add(Funcionalidades.vagas[i]);
-                    pg.ValorTotal += valor;
-                    pg.Garagem.Add(Funcionalidades.vagas[i]);
                     pago = pagou;
                     
                 }
@@ -50,6 +51,7 @@ namespace MyPark
                 System.Console.WriteLine("RECEBENDO VALORES ....");
                 System.Console.WriteLine($"VALOR A PAGAR.............. R$ {aReceber.ToString("C")}");
                 System.Console.WriteLine($"VALOR RECEBIDO............. R$ {recebido.ToString("C")}");
+                recebido = aReceber;
                 var troco = recebido - aReceber;
                 System.Console.WriteLine($"TROCO ..................... R$ {troco.ToString("C")}");
                 //System.Console.WriteLine($"TOTAL ..................... R$ {recebido}");
@@ -85,23 +87,29 @@ namespace MyPark
         }
         public void ListaDePagamentos()
         {
-            var pg = new Pagamentos();
+            var dadosGaragemSerializado = File.ReadAllText("Arquivos/pagamentos.json");
+            List<Pagamentos> deserializedGaragem = JsonConvert.DeserializeObject<List<Pagamentos>>(dadosGaragemSerializado);
             System.Console.WriteLine("========= [ PAGAMENTOS ] ============");
-            foreach(var pagamento in pg.Garagem)
+            
+            //for(int i = 0; i < deserializedGaragem.Count; i++)
+            foreach(var lista in deserializedGaragem)
             {
-                    System.Console.WriteLine("\n==============[ DADOS DO VEICULO ]================\n");
-                    System.Console.WriteLine($"MARCA: {pagamento.Carro.Marca}");
-                    System.Console.WriteLine($"MODELO: {pagamento.Carro.Modelo}");
-                    System.Console.WriteLine($"PLACA: {pagamento.Carro.Placa}");
+                    int indice = 0;
+                    System.Console.WriteLine("\n==============[ DADOS DO VEICULO ]================\n");                    
+                    System.Console.WriteLine($"MARCA: {lista.Garagem[indice].Carro.Marca}");
+                    System.Console.WriteLine($"MODELO: {lista.Garagem[indice].Carro.Modelo}");
+                    System.Console.WriteLine($"MODELO: {lista.Garagem[indice].Carro.Modelo}");
+                    System.Console.WriteLine($"PLACA: {lista.Garagem[indice].Carro.Placa}");
                     System.Console.WriteLine("==============[ DADOS DA VAGA ]================");
-                    System.Console.WriteLine($"Nº DA VAGA: {pagamento.NumeroVaga}");
-                    System.Console.WriteLine($"VALOR A PAGAR: {pagamento.ValorAPagar.ToString("C")}");
+                    System.Console.WriteLine($"Nº DA VAGA: {lista.Garagem[indice].NumeroVaga}");
+                    System.Console.WriteLine($"VALOR A PAGAR: {lista.Garagem[indice].ValorAPagar.ToString("C")}");
                     System.Console.WriteLine("==============[ PERIODO ]================");
-                    System.Console.WriteLine($"ENTRADA: {pagamento.HoraEntrada}");
-                    System.Console.WriteLine($"SAIDA: {pagamento.HoraSaida}");
+                    System.Console.WriteLine($"ENTRADA: {lista.Garagem[indice].HoraEntrada}");
+                    System.Console.WriteLine($"SAIDA: {lista.Garagem[indice].HoraSaida}");
                     System.Console.WriteLine("==============[ TOTAL ]================");
-                    System.Console.WriteLine($"TOTAL: {pg.ValorTotal.ToString("C")}");
+                    System.Console.WriteLine($"TOTAL : {lista.ValorTotal.ToString("C")}");
                     System.Console.WriteLine("\n==================================================\n");
+                    indice++;
             }
         }
     }

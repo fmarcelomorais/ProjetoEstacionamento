@@ -1,5 +1,4 @@
 ﻿
-using MyPark.Models;
 using MyPark;
 
 System.Console.WriteLine("===============[ Syspark v1.0 ]===============\n");

@@ -13,3 +13,6 @@ F:\projetoEstacionamento\MyPark\obj\Debug\net8.0\MyPark.pdb
 F:\projetoEstacionamento\MyPark\obj\Debug\net8.0\MyPark.genruntimeconfig.cache
 F:\projetoEstacionamento\MyPark\obj\Debug\net8.0\ref\MyPark.dll
 F:\Projetoestacionamento\mypark\obj\Debug\net8.0\MyPark.sourcelink.json
+F:\ProjetoEstacionamento\MyPark\bin\Debug\net8.0\Newtonsoft.Json.dll
+F:\ProjetoEstacionamento\MyPark\obj\Debug\net8.0\MyPark.csproj.AssemblyReference.cache
+F:\ProjetoEstacionamento\MyPark\obj\Debug\net8.0\MyPark.csproj.CopyComplete

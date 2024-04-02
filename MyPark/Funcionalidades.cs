@@ -7,8 +7,8 @@ namespace MyPark
     {
         public static List<Carro> carros = new List<Carro>();
         public static Garage[] vagas = new Garage[10];
-       // public static List<Garage> vagas = new List<Garage>(10);
 
+        public static List<Pagamentos> listaDePagamentos = new List<Pagamentos>();
 
         public static void Menu()
         {
@@ -25,11 +25,11 @@ namespace MyPark
                 switch(opc)
                 {
                     case 1:
-                        Console.Clear();
+                        //Console.Clear();
                         Funcionalidades.Estacionamento();
                         break;
                     case 2:
-                        Console.Clear();
+                       // Console.Clear();
                         Funcionalidades.Financeiro();
                         break;
                     case 0:
@@ -44,7 +44,7 @@ namespace MyPark
         }
         public static void Estacionamento()
         {   
-            System.Console.Clear();
+            //System.Console.Clear();
             System.Console.WriteLine("==================[ ESTACIONAMENTO ]====================");
             System.Console.WriteLine("[1] Cadastrar Veiculo | [2] Listar Veiculos | [3] Pesquisar Veiculo | [4] Entrar na vaga | [5] Sair da vaga | [6] Vagas Disponiveis | [0] - Voltar\n");
             System.Console.Write("O QUE DESEJA FAZER? -> ");
@@ -73,7 +73,7 @@ namespace MyPark
                     Funcionalidades.Sair();
                     break;
                 case 6:
-                    //Console.Clear();
+                    Console.Clear();
                     VagasDisponiveis();
                     break;
                 case 0:
@@ -195,7 +195,6 @@ namespace MyPark
             var es = new Estacionamento();
             es.ListarVagasDisponiveis();
         }
-    
         public static void Receber()
         {
             var es = new Estacionamento();

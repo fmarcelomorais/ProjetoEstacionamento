@@ -6,9 +6,7 @@ using System.Threading.Tasks;
 namespace MyPark.Models
 {
     public class Estacionamento
-    {/* 
-        public Carro[] vagas = new Carro[10];
-        public List<Carro> carros = new List<Carro>(); */
+    {
         const double VALOR_CARRO_PEQUENO = 5.00;
         const double VALOR_CARRO_GRANDE = 8.00;
 
@@ -76,7 +74,6 @@ namespace MyPark.Models
         }
         public void Sair(string placa)
         {
-            //var fin = new Financeiro();
             var carro = BuscaVeiculo(placa);
 
             for(int i = 0; i < Funcionalidades.vagas.Length; i++)

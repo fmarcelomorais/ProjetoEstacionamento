@@ -1,0 +1,38 @@
+[
+  {
+    "Garagem": [
+      {
+        "HoraEntrada": "2024-04-02T00:55:42.7166754-03:00",
+        "HoraSaida": "2024-04-02T00:55:58.6020165-03:00",
+        "NumeroVaga": 1,
+        "Carro": {
+          "Marca": "GM",
+          "Modelo": "CORSA MAXX 1.0",
+          "Placa": "HYT3151",
+          "Tipo": "P"
+        },
+        "ValorAPagar": 5.0,
+        "StatusPagamento": true
+      }
+    ],
+    "ValorTotal": 5.0
+  },
+  {
+    "Garagem": [
+      {
+        "HoraEntrada": "2024-04-02T00:56:21.2835485-03:00",
+        "HoraSaida": "2024-04-02T00:56:41.7077533-03:00",
+        "NumeroVaga": 2,
+        "Carro": {
+          "Marca": "GM",
+          "Modelo": "CORSA MAXX 1.0",
+          "Placa": "HYT3151",
+          "Tipo": "P"
+        },
+        "ValorAPagar": 5.0,
+        "StatusPagamento": true
+      }
+    ],
+    "ValorTotal": 5.0
+  }
+]
